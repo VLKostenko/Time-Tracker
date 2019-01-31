@@ -1,0 +1,21 @@
+<section @fade class="time-contents">
+    <a class="link-back" mat-raised-button [routerLink]="['/home']">Back</a>
+    <div class="container">
+        <h1 class="h1">Spent Time List</h1>
+        <mat-accordion 
+            class="time-list"
+            *ngIf="time_entries">
+            <mat-expansion-panel 
+                class="time-item"
+                *ngFor="let time of time_entries.time_entries"
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header class="title">
+                    <mat-panel-title>ID Project: {{ time.project.id }}</mat-panel-title>
+                    <mat-panel-title>Project: {{ time.project.name }}</mat-panel-title>
+                </mat-expansion-panel-header>
+                <p class="time-hours">Spent Hours: {{ time.hours }}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</section>

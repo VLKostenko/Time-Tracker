@@ -1,0 +1,65 @@
+.issues-contents {
+	position: relative;
+	padding-top: 3em;
+	.link-back {
+		color: #fff;
+		font-size: 16px;
+		margin-left: 50px;
+		transition: all ease .5s;
+		background-color: #3f51b5;
+		font-family: 'Rubik', sans-serif;
+		&:hover {
+			color: #f44336;
+			transition: color ease .3s;
+		}
+	}
+	.container {
+		width: 1200px;
+		margin: 0 auto;
+		.h1 {
+			text-align: center;
+			color: rgba(0,0,0,.6);
+			font-family: 'Rubik', sans-serif;
+		}
+		.issues-list {
+			display: flex;
+			position: relative;
+			flex-direction: column;
+			padding-left: 0;
+			.issues-item {
+				width: 100%;
+				margin-bottom: 20px;
+				font-size: 16px;
+				cursor: pointer;
+				position: relative;
+				list-style-type: none;
+				text-transform: uppercase;
+				transition: all  ease .5s;
+				.title {
+					font-size: 16px;
+					font-family: 'Rubik', sans-serif;
+				}
+				.project-id, .issue-description {	
+					font-size: 16px;
+					margin-right: 10px;
+					text-transform: none;
+					text-decoration: none;
+					font-family: 'Rubik', sans-serif;
+				}
+				&:hover {
+					color: #fff;
+					background-color: #3f51b5;
+					transition: all  ease .5s;
+					mat-panel-title {
+						color: #fff;
+						transition: all  ease .5s;
+					}
+					.project-description {
+						@extend mat-panel-title;
+					}
+				}
+			}
+		}
+	}
+}
+

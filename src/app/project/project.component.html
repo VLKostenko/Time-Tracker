@@ -1,0 +1,31 @@
+<section @fade class="projects-contents">
+    <a class="link-back" mat-raised-button [routerLink]="['/home']">Back</a>
+    <div class="container">
+        <h1 class="h1">Projects List</h1>
+        <mat-accordion 
+            class="project-list"
+            *ngIf="projects">
+            <mat-expansion-panel 
+                class="project-item"
+                *ngFor="let project of projects.projects"
+                (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header class="title">
+                    <mat-panel-title>{{ project.name }}</mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="project-description">
+                    <p class="p">ID {{ project.id }}</p>
+                    <p class="p">Description: {{ project.description }}</p>
+                    <p class="p">Comments: {{todo.value}}</p>
+                </div>
+                <mat-form-field class="projects-input">
+                    <input [(ngModel)]="attribute" matInput #todo name="text" type="text" placeholder="Add your comments">
+                </mat-form-field>
+                <button class="input-btn" (click)="getLocalStorage()" (click)="addTodo(todo.value)"  mat-raised-button>Add</button>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</section>
+
+
+
